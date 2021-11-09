@@ -1,18 +1,43 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <div class="bg-gray-100 w-full">
+      <Header class="mx-auto" style="max-width: 768px" />
+    </div>
+    <div class="mx-auto" style="max-width: 768px">
+      <h1>Overview</h1>
+    </div>
+    <div class="mx-auto" style="max-width: 768px">
+      <h1>Languages</h1>
+    </div>
+    <div class="mx-auto" style="max-width: 768px">
+      <h1>Technologies</h1>
+    </div>
+    <div class="mx-auto" style="max-width: 768px">
+      <h1>Fun facts</h1>
+    </div>
+    <div class="mx-auto" style="max-width: 768px">
+      <h1>Repositories</h1>
+    </div>
+    <div class="mx-auto" style="max-width: 768px">
+      <h1>Coworker Superstars</h1>
+    </div>
+    <div class="mx-auto" style="max-width: 768px">
+      <h1>About</h1>
+    </div>
+    <div class="mx-auto" style="max-width: 768px">
+      <h1>Work experience</h1>
+    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
+import Header from '@/components/dashboard/Header.vue';
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld,
+    Header,
   },
 };
 </script>
