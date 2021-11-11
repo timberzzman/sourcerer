@@ -23,12 +23,29 @@
     <div>
       <img class="rounded-full" src="https://avatars.githubusercontent.com/u/10236814?v=4" />
     </div>
-    <div class="bg-gray-200 mx-3"><p>test</p></div>
-    <div class="bg-gray-200 mx-3"><p>test</p></div>
-    <div class="bg-gray-200 mx-3"><p>test</p></div>
-    <div class="bg-gray-200 mx-3"><p>test</p></div>
-    <div class="bg-gray-200 mx-3"><p>test</p></div>
-    <div class="bg-gray-200 mx-3"><p>test</p></div>
+    <div class="bg-gray-200 mx-1 p-1">
+      <p>Commits</p>
+      <p>0</p>
+    </div>
+    <div class="bg-gray-200 mx-1 p-1">
+      <p>Repos</p>
+      <p>0</p>
+    </div>
+    <div class="bg-gray-200 mx-1 p-1">
+      <p>Lines of code</p>
+      <p>0</p>
+    </div>
+    <div class="bg-gray-200 mx-1 p-1">
+      <p>Followers</p>
+      <p>0</p>
+    </div>
+    <div class="bg-gray-200 mx-1 p-1">
+      <p>Following</p>
+      <p>0</p>
+    </div>
+    <div class="bg-gray-200 mx-1 p-1">
+      <p>Refresh</p>
+    </div>
   </div>
 </div>
 </template>
