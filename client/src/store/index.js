@@ -38,6 +38,29 @@ const UserInfos = gql`
   }
 `;
 
+const UserRepositoriesInfos = gql`
+  query GetUserInfos {
+    viewer {
+      repositories(last: 100) {
+        nodes {
+          languages(first: 10) {
+            nodes {
+              name
+              color
+            }
+          }
+          name
+          createdAt
+          description
+          owner {
+            login
+          }
+        }
+      }
+    }
+  }
+`;
+
 export default new Vuex.Store({
   state: {
     isAuthenticated: false,
@@ -73,6 +96,13 @@ export default new Vuex.Store({
     async getUserData({ commit }) {
       const response = await apollo.query({
         query: UserInfos,
+      });
+      console.log(response.data);
+      commit('setUserData', response.data.viewer);
+    },
+    async getRepositories({ commit }) {
+      const response = await apollo.query({
+        query: UserRepositoriesInfos,
       });
       console.log(response.data);
       commit('setUserData', response.data.viewer);

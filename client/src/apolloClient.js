@@ -4,11 +4,12 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 
 const getHeaders = () => {
   const headers = {};
-  const token = window.localStorage.getItem('apollo-token');
+  // const token = window.localStorage.getItem('apollo-token');
+  const token = process.env.VUE_APP_API_TOKEN;
   if (token) {
     headers.authorization = `Bearer ${token}`;
   } else {
-    headers.authorization = 'Bearer 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';
+    console.error('No token for the api');
   }
   return headers;
 };
