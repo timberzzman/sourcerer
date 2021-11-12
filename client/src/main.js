@@ -6,6 +6,7 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 import VueApollo from 'vue-apollo';
 import VueAxios from 'vue-axios';
 import axios from 'axios';
+import VueAuthenticate from 'vue-authenticate';
 import App from './App.vue';
 import router from './router';
 import store from './store';
@@ -13,6 +14,25 @@ import './assets/tailwind.css';
 
 Vue.use(VueApollo);
 Vue.use(VueAxios, axios);
+Vue.use(VueAuthenticate, {
+  providers: {
+    github: {
+      clientId: 'bc0949511e3596b94c4c',
+      redirectUri: 'http://localhost:3000/auth/callback',
+    },
+  },
+});
+
+/*
+Vue.prototype.$vueAuth = new VueAuthenticate(Vue.prototype.$http, {
+  providers: {
+    github: {
+      clientId: 'bc0949511e3596b94c4c',
+      redirectUri: 'http://localhost:8080/',
+    },
+  },
+});
+*/
 
 Vue.config.productionTip = false;
 const getHeaders = () => {
