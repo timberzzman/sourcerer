@@ -1,14 +1,18 @@
 import Vue from 'vue';
+// vue-apollo
 import ApolloClient from 'apollo-client';
 import { HttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import VueApollo from 'vue-apollo';
+import VueAxios from 'vue-axios';
+import axios from 'axios';
 import App from './App.vue';
 import router from './router';
 import store from './store';
 import './assets/tailwind.css';
 
 Vue.use(VueApollo);
+Vue.use(VueAxios, axios);
 
 Vue.config.productionTip = false;
 const getHeaders = () => {
