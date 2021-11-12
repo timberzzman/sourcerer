@@ -11,37 +11,37 @@
   </div>
   <div class="grid grid-cols-2">
     <div>
-      <h1>Elouan MAILLY</h1>
+      <h1>{{getUserData.name}}</h1>
     </div>
     <div>
-      <p>My worst coworker was @Damokless, hey!</p>
-      <p>Paris, France</p>
+      <p>{{getUserData.bio}}</p>
+      <p>{{getUserData.location}}</p>
     </div>
   </div>
-  <p>timberzzman</p>
+  <p>{{getUserData.login}}</p>
   <div class="grid grid-cols-7 flex items-center mt-10">
     <div>
-      <img class="rounded-full" src="https://avatars.githubusercontent.com/u/10236814?v=4" />
+      <img class="rounded-full" :src="getUserData.avatarUrl" />
     </div>
     <div class="bg-gray-200 mx-1 p-1">
       <p>Commits</p>
-      <p>0</p>
+      <p>{{getUserData.contributionsCollection.totalCommitContributions}}</p>
     </div>
     <div class="bg-gray-200 mx-1 p-1">
       <p>Repos</p>
-      <p>0</p>
+      <p>{{getUserData.repositories.totalCount}}</p>
     </div>
     <div class="bg-gray-200 mx-1 p-1">
-      <p>Lines of code</p>
-      <p>0</p>
+      <p>Stars</p>
+      <p>{{getUserData.starredRepositories.totalCount}}</p>
     </div>
     <div class="bg-gray-200 mx-1 p-1">
       <p>Followers</p>
-      <p>0</p>
+      <p>{{getUserData.followers.totalCount}}</p>
     </div>
     <div class="bg-gray-200 mx-1 p-1">
       <p>Following</p>
-      <p>0</p>
+      <p>{{getUserData.following.totalCount}}</p>
     </div>
     <div class="bg-gray-200 mx-1 p-1">
       <p>Refresh</p>
@@ -51,8 +51,13 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
   name: 'Header',
+  computed: {
+    ...mapGetters(['getUserData']),
+  },
 };
 </script>
 
